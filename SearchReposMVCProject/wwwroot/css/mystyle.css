@@ -1,0 +1,16 @@
+.search {
+  width: 70%;
+  margin: auto;
+  font-size: 1.5 rem;
+}
+
+.search .search-text {
+  width: 90%;
+  height: 3rem;
+}
+
+.search .search-btn {
+  width: 10%;
+  height: 3rem;
+}
+/*# sourceMappingURL=mystyle.css.map */

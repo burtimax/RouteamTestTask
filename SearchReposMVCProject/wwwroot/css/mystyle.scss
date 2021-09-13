@@ -1,0 +1,18 @@
+$search-height : 3rem;
+$search-font-size: 1.5 rem;
+.search{
+    width: 70%;
+    margin: auto;
+    font-size: $search-font-size;
+
+    
+    .search-text{
+        width: 90%;
+        height: $search-height;
+    }
+    
+    .search-btn{
+        width: 10%;
+        height: $search-height;
+    }
+}

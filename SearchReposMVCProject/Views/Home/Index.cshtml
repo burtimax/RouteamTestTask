@@ -1,0 +1,51 @@
+﻿@model RepositoryData;
+
+@{
+    ViewData["Title"] = "Search Page";
+}
+
+@* Строка поиска и кнопка *@
+<div class="search">
+    <form class="form-inline" action="~/Home/Index" method="POST">
+        @if (ViewBag.SearchString != null)
+        {
+            @:<input name="search" class="search-text" type="search" placeholder="Search" aria-label="Search" value="@ViewBag.SearchString"/>
+        }
+        else
+        {
+            @:<input name="search" class="search-text" type="search" placeholder="Search" aria-label="Search" />
+        }
+
+            <button class="search-btn" type="submit">Search</button>
+    </form>
+</div>
+
+@* Показать карточки репозиториев *@
+@if (Model != null && Model.items.Count > 0)
+{
+    <div class="container m-5">
+        <div class="cards d-flex flex-wrap">
+            @foreach (var item in Model.items)
+            {
+             <div class="repos-card w-25 p-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.name</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@item.owner.login</h6>
+                        <div class="card-text">
+                            <ul>
+                                <li>Stargazers - @item.stargazers_count</li>
+                                <li>Watchers - @item.watchers</li>
+                            </ul>
+                        </div>
+                        <a target="_blank" href="https:\\github.com/@item.full_name" class="card-link">Repos link</a>
+                    </div>
+                </div>
+             </div>
+             }
+        </div>
+    </div>
+
+        }
+
+
